@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <div id="main">
+        <div id="border">
+            <div id="first">
+                <center>
+                <h1 id="times">0</h1>
+               </center>
+            </div>
+        </div>
+    </div>
+    </center>
+    <style>
+        body {
+            background-color: black;
+        }
+        #main {
+            border: 2px solid black;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            font-family: System-ui;
+            font-size: 20px;
+        }
+        h1{
+            margin-top: 300px;
+            border: 3px solid black;
+            padding: 20px;
+            width: 300px;
+            border-radius: 15px;
+            background-color: black;
+        }
+        #first{
+            border: 2px solid orange;
+            margin-top: 20px;
+            background-color: orange;
+            border-radius: 30px;
+            height: 700px
+        }
+    </style>
+    <script>
+        const times = document.getElementById("times")
+
+        function update_time() {
+            let tims = new Date()
+            let hour = String(tims.getHours())
+            let minute = String(tims.getMinutes())
+            let sec = String(tims.getSeconds())
+
+            times.innerText = `${hour} : ${minute} : ${sec}`
+        }
+        update_time()
+        setInterval(update_time, 1)
+    </script>
+</body>
+</html>
